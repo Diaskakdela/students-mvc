@@ -5,9 +5,21 @@
     <title>Title</title>
 </head>
 <body>
-<ul th:each="student : ${students}">
-    <li th:text="${student.getEmail()}"></li>
-    <li th:text="${student.getName()}"></li>
-</ul>
+<table>
+    <tr>
+        <th>id</th>
+        <th>name</th>
+        <th>lname</th>
+        <th>email</th>
+        <th>age</th>
+    </tr>
+    <tr th:each="student : ${students}">
+        <td th:text="${student.getId()}"> </td>
+        <td th:text="${student.getName()}"> </td>
+        <td th:text="${student.getLname()}"> </td>
+        <td th:text="${student.getEmail()}"> </td>
+        <td th:text="${student.getAge()}"> </td>
+    </tr>
+</table>
 </body>
 </html>
