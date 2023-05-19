@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<ul th:each="student : ${students}">
+    <li th:text="${student.getEmail()}"></li>
+    <li th:text="${student.getName()}"></li>
+</ul>
+</body>
+</html>
