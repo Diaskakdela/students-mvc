@@ -30,7 +30,9 @@ public class StudentController {
     }
     @GetMapping("/students/{id}")
     public String showStudentWithId(@PathVariable Long id, Model model){
-        model.addAttribute("student", studentRepo.findById(id).orElseThrow(()->new RuntimeException("no student with id")));
+        if(studentRepo.findById(id).isPresent()){
+            model.addAttribute("student", studentRepo.findById(id).get());
+        }
 
         return "student_show";
     }
